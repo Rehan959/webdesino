@@ -1,12 +1,13 @@
+import { ReactNode } from "react";
+
 import {
+  BarChartIcon,
   GlobeIcon,
-  SearchIcon,
   MegaphoneIcon,
   PaletteIcon,
+  SearchIcon,
   SmartphoneIcon,
-  BarChartIcon,
 } from "lucide-react";
-import { ReactNode } from "react";
 
 import { Item, ItemDescription, ItemIcon, ItemTitle } from "../../ui/item";
 import { Section } from "../../ui/section";

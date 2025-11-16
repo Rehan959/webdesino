@@ -4,15 +4,12 @@ import Link from "next/link";
 import * as React from "react";
 
 import { siteConfig } from "@/config/site";
-import { cn } from "@/lib/utils";
 
 import {
   NavigationMenu,
-  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "./navigation-menu";
 

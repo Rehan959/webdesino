@@ -3,11 +3,11 @@ import "@/app/globals.css";
 import type { Metadata } from "next";
 
 import { ThemeProvider } from "@/components/contexts/theme-provider";
-import { inter } from "@/lib/fonts";
 import Navbar from "@/components/sections/navbar/default";
+import { FooterBottom } from "@/components/ui/footer";
+import { inter } from "@/lib/fonts";
 
 import { siteConfig } from "../config/site";
-import { FooterBottom } from "@/components/ui/footer";
 
 export const metadata: Metadata = {
   title: {

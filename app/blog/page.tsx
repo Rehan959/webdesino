@@ -1,12 +1,12 @@
-// app/blog/page.tsx
+import Image from "next/image";
+import Link from "next/link";
+
+import { ArrowRight, Calendar, Clock, Search, User } from "lucide-react";
+
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
-import { Search, Calendar, User, Tag, ArrowRight, Clock } from "lucide-react";
-import Link from "next/link";
-import Image from "next/image";
 
 // Mock blog data - replace with your actual data fetching
 const blogPosts = [

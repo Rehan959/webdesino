@@ -1,12 +1,13 @@
+import Link from "next/link";
+
+import { siteConfig } from "@/config/site";
 import Footer from "@/components/sections/footer/default";
 import Navbar from "@/components/sections/navbar/default";
+import Stats from "@/components/sections/stats/default";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { LayoutLines } from "@/components/ui/layout-lines";
 import { Section } from "@/components/ui/section";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { siteConfig } from "@/config/site";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import Stats from "@/components/sections/stats/default";
 
 export const metadata = {
   title: "Our Clients - WebDesino",

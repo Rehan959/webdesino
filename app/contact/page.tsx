@@ -1,10 +1,9 @@
-import Footer from "@/components/sections/footer/default";
-import ContactForm from "@/components/sections/contact-form/default";
-import { LayoutLines } from "@/components/ui/layout-lines";
-import { Section } from "@/components/ui/section";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { ClockIcon, MailIcon, MapPinIcon, PhoneIcon } from "lucide-react";
+
 import { siteConfig } from "@/config/site";
-import { MailIcon, PhoneIcon, MapPinIcon, ClockIcon } from "lucide-react";
+import Footer from "@/components/sections/footer/default";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Section } from "@/components/ui/section";
 
 export const metadata = {
   title: "Contact Us - WebDesino",
@@ -25,7 +24,7 @@ export default function ContactPage() {
               <div>
                 <h2 className="text-2xl font-semibold mb-6">Contact Information</h2>
                 <p className="text-muted-foreground mb-6">
-                  Reach out to us through any of these channels. We're here to help you grow your business online.
+                  Reach out to us through any of these channels. We&apos;re here to help you grow your business online.
                 </p>
               </div>
               

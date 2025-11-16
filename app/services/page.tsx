@@ -1,10 +1,9 @@
-import Services from "@/components/sections/services/default";
-import Footer from "@/components/sections/footer/default";
-import { LayoutLines } from "@/components/ui/layout-lines";
-import { Section } from "@/components/ui/section";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
+
 import { siteConfig } from "@/config/site";
+import Footer from "@/components/sections/footer/default";
+import { Button } from "@/components/ui/button";
+import { Section } from "@/components/ui/section";
 
 export const metadata = {
   title: "Our Services - WebDesino",
@@ -21,7 +20,7 @@ export default function ServicesPage() {
             Ready to Get Started?
           </h2>
           <p className="text-muted-foreground max-w-[640px]">
-            Contact us today for a free consultation and let's discuss how we can help grow your business online.
+            Contact us today for a free consultation and let&apos;s discuss how we can help grow your business online.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button size="lg" asChild>

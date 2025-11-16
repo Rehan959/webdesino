@@ -1,9 +1,9 @@
 import { type VariantProps } from "class-variance-authority";
 import { Menu } from "lucide-react";
+import Link from "next/link";
 import { ReactNode } from "react";
-import { ThemeToggleAnimated } from "@/components/theme-toggle/theme-toggle";
 
-import { siteConfig } from "@/config/site";
+import { ThemeToggleAnimated } from "@/components/theme-toggle/theme-toggle";
 import { cn } from "@/lib/utils";
 
 import WebDesino from "../../logos/webdesino";
@@ -13,9 +13,8 @@ import {
   NavbarLeft,
   NavbarRight,
 } from "../../ui/navbar";
-import WebDesinoNavigation from "../../ui/webdesino-navigation";
 import { Sheet, SheetContent, SheetTrigger } from "../../ui/sheet";
-import Link from "next/link";
+import WebDesinoNavigation from "../../ui/webdesino-navigation";
 
 interface NavbarLink {
   text: string;

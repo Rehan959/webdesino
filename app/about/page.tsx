@@ -1,17 +1,17 @@
-import Footer from "@/components/sections/footer/default";
-
-import { LayoutLines } from "@/components/ui/layout-lines";
-import { Section } from "@/components/ui/section";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { siteConfig } from "@/config/site";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+
 import {
   AwardIcon,
-  UsersIcon,
-  TargetIcon,
   HeartIcon,
+  TargetIcon,
+  UsersIcon,
 } from "lucide-react";
+
+import { siteConfig } from "@/config/site";
+import Footer from "@/components/sections/footer/default";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Section } from "@/components/ui/section";
 
 export const metadata = {
   title: "About Us - WebDesino",
@@ -118,7 +118,7 @@ export default function AboutPage() {
       <Section>
         <div className="max-w-container mx-auto flex flex-col items-center gap-6 text-center">
           <h2 className="text-3xl font-semibold sm:text-4xl">
-            Let's Work Together
+            Let&apos;s Work Together
           </h2>
           <p className="text-muted-foreground max-w-[640px]">
             Ready to take your business to the next level? Contact us today for a free consultation.
