@@ -1,11 +1,16 @@
+import { ArrowRight, Calendar, Clock, Search, User } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-import { ArrowRight, Calendar, Clock, Search, User } from "lucide-react";
-
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 
 // Format date consistently to avoid hydration mismatches

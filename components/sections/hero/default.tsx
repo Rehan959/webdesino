@@ -5,9 +5,7 @@ import { ReactNode } from "react";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
-import { Badge } from "../../ui/badge";
 import { Button, buttonVariants } from "../../ui/button";
-import Screenshot from "../../ui/screenshot";
 import { Section } from "../../ui/section";
 
 interface HeroButtonProps {
@@ -20,18 +18,12 @@ interface HeroButtonProps {
 
 interface HeroProps {
   title?: string;
-  badge?: ReactNode | false;
   buttons?: HeroButtonProps[] | false;
   className?: string;
 }
 
 export default function Hero({
   title = "Give your big idea the design it deserves",
-  badge = (
-    <Badge variant="secondary" className="animate-appear opacity-0 delay-200">
-      Digital Marketing Agency Delhi
-    </Badge>
-  ),
   buttons = [
     {
       href: siteConfig.getStartedUrl,

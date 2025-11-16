@@ -1,5 +1,3 @@
-import { ReactNode } from "react";
-
 import {
   BarChartIcon,
   GlobeIcon,
@@ -8,6 +6,7 @@ import {
   SearchIcon,
   SmartphoneIcon,
 } from "lucide-react";
+import { ReactNode } from "react";
 
 import { Item, ItemDescription, ItemIcon, ItemTitle } from "../../ui/item";
 import { Section } from "../../ui/section";

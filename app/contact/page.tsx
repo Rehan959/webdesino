@@ -1,9 +1,14 @@
 import { ClockIcon, MailIcon, MapPinIcon, PhoneIcon } from "lucide-react";
 
-import { siteConfig } from "@/config/site";
 import Footer from "@/components/sections/footer/default";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Section } from "@/components/ui/section";
+import { siteConfig } from "@/config/site";
 
 export const metadata = {
   title: "Contact Us - WebDesino",

@@ -1,17 +1,22 @@
-import Link from "next/link";
-
 import {
   AwardIcon,
   HeartIcon,
   TargetIcon,
   UsersIcon,
 } from "lucide-react";
+import Link from "next/link";
 
-import { siteConfig } from "@/config/site";
 import Footer from "@/components/sections/footer/default";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Section } from "@/components/ui/section";
+import { siteConfig } from "@/config/site";
 
 export const metadata = {
   title: "About Us - WebDesino",
