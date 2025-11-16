@@ -1,16 +1,15 @@
 import {
-  BlocksIcon,
-  EclipseIcon,
-  FastForwardIcon,
-  LanguagesIcon,
-  MonitorSmartphoneIcon,
+  AwardIcon,
+  CheckCircleIcon,
+  ClockIcon,
+  LineChartIcon,
   RocketIcon,
-  ScanFaceIcon,
-  SquarePenIcon,
+  SmartphoneIcon,
+  HeadphonesIcon,
 } from "lucide-react";
 import { ReactNode } from "react";
 
-import { Item, ItemDescription,ItemIcon, ItemTitle } from "../../ui/item";
+import { Item, ItemDescription, ItemIcon, ItemTitle } from "../../ui/item";
 import { Section } from "../../ui/section";
 
 interface ItemProps {
@@ -20,56 +19,53 @@ interface ItemProps {
 }
 
 interface ItemsProps {
-  title?: string;
+  title?: string | ReactNode;
   items?: ItemProps[] | false;
   className?: string;
 }
 
 export default function Items({
-  title = "Everything you need. Nothing you don't.",
+  title = (
+    <>
+      Why Choose WebDesino?
+    </>
+  ),
   items = [
     {
-      title: "Accessibility first",
-      description: "Fully WCAG 2.0 compliant, made with best a11y practices",
-      icon: <ScanFaceIcon className="size-5 stroke-1" />,
-    },
-    {
-      title: "Responsive design",
-      description: "Looks and works great on any device and screen size",
-      icon: <MonitorSmartphoneIcon className="size-5 stroke-1" />,
-    },
-    {
-      title: "Light and dark mode",
+      title: "Proven Results",
       description:
-        "Seamless switching between color schemes, 6 themes included",
-      icon: <EclipseIcon className="size-5 stroke-1" />,
+        "Trusted by businesses across Delhi NCR with measurable growth in traffic, leads, and sales.",
+      icon: <LineChartIcon className="size-5 stroke-1" />,
     },
     {
-      title: "Easy to customize",
-      description: "Flexible options to match your product or brand",
-      icon: <BlocksIcon className="size-5 stroke-1" />,
+      title: "Timely Delivery",
+      description:
+        "We deliver fully tested, high-performing websites on time, every time.",
+      icon: <ClockIcon className="size-5 stroke-1" />,
     },
     {
-      title: "Top-level performance",
-      description: "Made for lightning-fast load times and smooth interactions",
-      icon: <FastForwardIcon className="size-5 stroke-1" />,
+      title: "Award Winning",
+      description:
+        "Recognized for professional work and premium-quality digital solutions.",
+      icon: <AwardIcon className="size-5 stroke-1" />,
     },
     {
-      title: "Production ready",
-      description: "Thoroughly tested and launch-prepared",
+      title: "Highest Rankings in Delhi",
+      description:
+        "Our SEO-first approach ensures your business ranks at the top of Google searches.",
       icon: <RocketIcon className="size-5 stroke-1" />,
     },
     {
-      title: "Made for localisation",
+      title: "SEO-Optimized Websites",
       description:
-        "Easy to implement support for multiple languages and regions",
-      icon: <LanguagesIcon className="size-5 stroke-1" />,
+        "All websites are mobile-friendly, fast-loading, and designed to perform on Google.",
+      icon: <SmartphoneIcon className="size-5 stroke-1" />,
     },
     {
-      title: "CMS friendly",
+      title: "24/7 Support",
       description:
-        "Built to work with your any headless content management system",
-      icon: <SquarePenIcon className="size-5 stroke-1" />,
+        "Our team is available round the clock for maintenance, updates, and assistance.",
+      icon: <HeadphonesIcon className="size-5 stroke-1" />,
     },
   ],
   className,
@@ -77,11 +73,12 @@ export default function Items({
   return (
     <Section className={className}>
       <div className="max-w-container mx-auto flex flex-col items-center gap-6 sm:gap-20">
-        <h2 className="max-w-[560px] text-center text-3xl leading-tight font-semibold sm:text-5xl sm:leading-tight">
+        <h2 className="text-center text-3xl font-semibold sm:text-5xl sm:leading-tight">
           {title}
         </h2>
+
         {items !== false && items.length > 0 && (
-          <div className="grid auto-rows-fr grid-cols-2 gap-0 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
+          <div className="grid grid-cols-3 gap-4">
             {items.map((item, index) => (
               <Item key={index}>
                 <ItemTitle className="flex items-center gap-2">

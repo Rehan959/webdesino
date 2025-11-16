@@ -4,36 +4,41 @@ import type { Metadata } from "next";
 
 import { ThemeProvider } from "@/components/contexts/theme-provider";
 import { inter } from "@/lib/fonts";
+import Navbar from "@/components/sections/navbar/default";
 
 import { siteConfig } from "../config/site";
+import { FooterBottom } from "@/components/ui/footer";
 
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
     template: `%s - ${siteConfig.name}`,
   },
-  metadataBase: new URL(siteConfig.getStartedUrl),
+  metadataBase: new URL(siteConfig.url),
   description: siteConfig.description,
   keywords: [
-    "Landing page template",
-    "Components",
-    "Shadcn",
-    "Next.js",
-    "React",
-    "Tailwind CSS",
-    "Radix UI",
+    "Web Development",
+    "SEO Services",
+    "Digital Marketing",
+    "Web Design",
+    "Delhi",
+    "Digital Agency",
+    "Website Development",
+    "SEO Agency Delhi",
+    "Graphic Design",
+    "Mobile App Development",
   ],
   authors: [
     {
-      name: "Mikolaj Dobrucki",
-      url: "https://mikolajdobrucki.com",
+      name: "WebDesino",
+      url: siteConfig.url,
     },
   ],
-  creator: "mikolajdobrucki",
+  creator: "WebDesino",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: siteConfig.getStartedUrl,
+    url: siteConfig.url,
     title: siteConfig.name,
     description: siteConfig.description,
     siteName: siteConfig.name,
@@ -51,7 +56,7 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
-    creator: "@mikolajdobrucki",
+    creator: "@webdesino",
   },
   icons: {
     icon: "/favicon.svg",
@@ -67,7 +72,11 @@ export default function RootLayout({
   return (
     <html lang="en" style={{ colorScheme: "dark" }} className="dark">
       <body className={`${inter.className} bg-background antialiased`}>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <Navbar/>
+          {children}
+          <FooterBottom/>
+          </ThemeProvider>
       </body>
     </html>
   );

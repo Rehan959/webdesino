@@ -1,19 +1,21 @@
 import { type VariantProps } from "class-variance-authority";
 import { Menu } from "lucide-react";
 import { ReactNode } from "react";
+import { ThemeToggleAnimated } from "@/components/theme-toggle/theme-toggle";
 
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
-import LaunchUI from "../../logos/launch-ui";
+import WebDesino from "../../logos/webdesino";
 import { Button, buttonVariants } from "../../ui/button";
 import {
   Navbar as NavbarComponent,
   NavbarLeft,
   NavbarRight,
 } from "../../ui/navbar";
-import Navigation from "../../ui/navigation";
+import WebDesinoNavigation from "../../ui/webdesino-navigation";
 import { Sheet, SheetContent, SheetTrigger } from "../../ui/sheet";
+import Link from "next/link";
 
 interface NavbarLink {
   text: string;
@@ -41,19 +43,21 @@ interface NavbarProps {
 }
 
 export default function Navbar({
-  logo = <LaunchUI />,
-  name = "Launch UI",
-  homeUrl = siteConfig.url,
+  logo = <WebDesino />,
+  name = "WebDesino",
+  homeUrl = "/",
   mobileLinks = [
-    { text: "Getting Started", href: siteConfig.url },
-    { text: "Components", href: siteConfig.url },
-    { text: "Documentation", href: siteConfig.url },
+    { text: "Home", href: "/" },
+    { text: "Services", href: "/services" },
+    { text: "About", href: "/about" },
+    { text: "Our Clients", href: "/clients" },
+    { text: "Contact", href: "/contact" },
+    { text: "Blog", href: "/blog" },
   ],
   actions = [
-    { text: "Sign in", href: siteConfig.url, isButton: false },
     {
-      text: "Get Started",
-      href: siteConfig.url,
+      text: "Contact Us",
+      href: "/contact",
       isButton: true,
       variant: "default",
     },
@@ -68,68 +72,74 @@ export default function Navbar({
       <div className="max-w-container relative mx-auto">
         <NavbarComponent>
           <NavbarLeft>
-            <a
+            <Link
               href={homeUrl}
               className="flex items-center gap-2 text-xl font-bold"
             >
               {logo}
               {name}
-            </a>
-            {showNavigation && (customNavigation || <Navigation />)}
+            </Link>
+            {showNavigation && (customNavigation || <WebDesinoNavigation />)}
           </NavbarLeft>
           <NavbarRight>
-            {actions.map((action, index) =>
-              action.isButton ? (
-                <Button
-                  key={index}
-                  variant={action.variant || "default"}
-                  asChild
-                >
-                  <a href={action.href}>
-                    {action.icon}
+            <div className="hidden md:flex items-center gap-4">
+              {actions.map((action, index) => (
+                action.isButton ? (
+                  <Button
+                    key={index}
+                    variant={action.variant || "default"}
+                    asChild
+                  >
+                    <Link href={action.href}>
+                      {action.icon}
+                      {action.text}
+                      {action.iconRight}
+                    </Link>
+                  </Button>
+                ) : (
+                  <Link
+                    key={index}
+                    href={action.href}
+                    className="text-sm font-medium hover:text-primary transition-colors"
+                  >
                     {action.text}
-                    {action.iconRight}
-                  </a>
-                </Button>
-              ) : (
-                <a
-                  key={index}
-                  href={action.href}
-                  className="hidden text-sm md:block"
-                >
-                  {action.text}
-                </a>
-              ),
-            )}
+                  </Link>
+                )
+              ))}
+            </div>
+            <ThemeToggleAnimated />
             <Sheet>
-              <SheetTrigger asChild>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="shrink-0 md:hidden"
-                >
+              <SheetTrigger asChild className="md:hidden">
+                <Button variant="ghost" size="icon">
                   <Menu className="size-5" />
-                  <span className="sr-only">Toggle navigation menu</span>
                 </Button>
               </SheetTrigger>
               <SheetContent side="right">
-                <nav className="grid gap-6 text-lg font-medium">
-                  <a
-                    href={homeUrl}
-                    className="flex items-center gap-2 text-xl font-bold"
-                  >
-                    <span>{name}</span>
-                  </a>
+                <div className="flex flex-col gap-4 mt-8">
                   {mobileLinks.map((link, index) => (
-                    <a
+                    <Link
                       key={index}
                       href={link.href}
-                      className="text-muted-foreground hover:text-foreground"
+                      className="text-lg font-medium hover:text-primary transition-colors"
                     >
                       {link.text}
-                    </a>
+                    </Link>
                   ))}
-                </nav>
+                  {actions.map((action, index) => (
+                    <Button
+                      key={index}
+                      variant={action.variant || "default"}
+                      className="w-auto md:w-auto"
+                      asChild
+                    >
+                      <Link href={action.href}>
+                        {action.icon}
+                        {action.text}
+                        {action.iconRight}
+                      </Link>
+                    </Button>
+                  ))}
+                </div>
               </SheetContent>
             </Sheet>
           </NavbarRight>

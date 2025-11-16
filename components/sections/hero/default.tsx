@@ -31,40 +31,34 @@ interface HeroProps {
 }
 
 export default function Hero({
-  title = "Give your big idea the design it deserves",
-  description = "Professionally designed blocks and templates built with React, Shadcn/ui and Tailwind that will help your product stand out.",
+  title = "Crafting Websites, Boosting Businesses",
+  description = "WebDesino is a leading Digital Marketing Agency Delhi and web development company helping businesses grow online with creative websites, SEO, and digital marketing solutions.",
   mockup = (
     <Screenshot
       srcLight="/dashboard-light.png"
       srcDark="/dashboard-dark.png"
-      alt="Launch UI app screenshot"
+      alt="WebDesino website showcase"  
       width={1248}
       height={765}
       className="w-full"
     />
   ),
   badge = (
-    <Badge variant="outline" className="animate-appear">
-      <span className="text-muted-foreground">
-        New version of Launch UI is out!
-      </span>
-      <a href={siteConfig.getStartedUrl} className="flex items-center gap-1">
-        Get started
-        <ArrowRightIcon className="size-3" />
-      </a>
+    <Badge variant="secondary" className="animate-appear opacity-0 delay-200">
+      Digital Marketing Agency Delhi
     </Badge>
   ),
   buttons = [
     {
       href: siteConfig.getStartedUrl,
       text: "Get Started",
-      variant: "default",
+      variant: "default" as const,
+      iconRight: <ArrowRightIcon className="size-4" />,
     },
     {
-      href: siteConfig.links.github,
-      text: "Github",
-      variant: "glow",
-      icon: <Github className="mr-2 size-4" />,
+      href: siteConfig.navigation.services,
+      text: "Our Services",
+      variant: "outline" as const,
     },
   ],
   className,
@@ -86,7 +80,7 @@ export default function Hero({
             {description}
           </p>
           {buttons !== false && buttons.length > 0 && (
-            <div className="animate-appear relative z-10 flex justify-center gap-4 opacity-0 delay-300">
+            <div className="flex flex-col sm:flex-row gap-4 animate-appear opacity-0 delay-300">
               {buttons.map((button, index) => (
                 <Button
                   key={index}
@@ -103,26 +97,12 @@ export default function Hero({
               ))}
             </div>
           )}
-          {mockup !== false && (
-            <div className="relative w-full pt-12">
-              <MockupFrame
-                className="animate-appear opacity-0 delay-700"
-                size="small"
-              >
-                <Mockup
-                  type="responsive"
-                  className="bg-background/90 w-full rounded-xl border-0"
-                >
-                  {mockup}
-                </Mockup>
-              </MockupFrame>
-              <Glow
-                variant="top"
-                className="animate-appear-zoom opacity-0 delay-1000"
-              />
-            </div>
-          )}
         </div>
+        {mockup !== false && (
+          <div className="animate-appear-zoom opacity-0 delay-500">
+            {mockup}
+          </div>
+        )}
       </div>
     </Section>
   );

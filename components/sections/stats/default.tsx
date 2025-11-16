@@ -1,74 +1,70 @@
+import { ReactNode } from "react";
+
 import { siteConfig } from "@/config/site";
+import { cn } from "@/lib/utils";
 
 import { Section } from "../../ui/section";
 
-interface StatItemProps {
-  label?: string;
+interface StatProps {
   value: string | number;
-  suffix?: string;
+  label: string;
   description?: string;
 }
 
 interface StatsProps {
-  items?: StatItemProps[] | false;
+  title?: string | ReactNode;
+  stats?: StatProps[];
   className?: string;
 }
 
 export default function Stats({
-  items = [
+  title = "Our Achievements",
+  stats = [
     {
-      label: "used by",
-      value: Math.round(siteConfig.stats.figma / 100) / 10,
-      suffix: "k",
-      description: "designers on Figma Community",
+      value: siteConfig.stats.clients,
+      label: "Happy Clients",
+      description: "Satisfied businesses across Delhi NCR",
     },
     {
-      label: "over",
-      value: siteConfig.stats.github,
-      description: "clones and forks of the template on Github",
+      value: siteConfig.stats.projects,
+      label: "Projects Completed",
+      description: "Successful digital projects delivered",
     },
     {
-      label: "already",
-      value: Math.round(siteConfig.stats.cli / 100) / 10,
-      suffix: "k",
-      description: "installations with shadcn/ui CLI",
+      value: siteConfig.stats.employees,
+      label: "Team Members",
+      description: "Expert professionals in our team",
     },
     {
-      label: "includes",
-      value: siteConfig.stats.sections,
-      description: "blocks and sections",
+      value: siteConfig.stats.total,
+      label: "Total Projects",
+      description: "And counting...",
     },
   ],
   className,
 }: StatsProps) {
   return (
-    <Section className={className}>
-      <div className="container mx-auto max-w-[960px]">
-        {items !== false && items.length > 0 && (
-          <div className="grid grid-cols-2 gap-12 sm:grid-cols-4">
-            {items.map((item, index) => (
+    <Section className={cn("bg-muted/30", className)}>
+      <div className="max-w-container mx-auto flex flex-col items-center gap-6 sm:gap-12">
+        {title && (
+          <h2 className="text-center text-3xl font-semibold sm:text-5xl sm:leading-tight">
+            {title}
+          </h2>
+        )}
+        {stats && stats.length > 0 && (
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 w-full">
+            {stats.map((stat, index) => (
               <div
                 key={index}
-                className="flex flex-col items-start gap-3 text-left"
+                className="flex flex-col items-center gap-2 text-center"
               >
-                {item.label && (
-                  <div className="text-muted-foreground text-sm font-semibold">
-                    {item.label}
-                  </div>
-                )}
-                <div className="flex items-baseline gap-2">
-                  <div className="from-foreground to-foreground dark:to-brand bg-linear-to-r bg-clip-text text-4xl font-medium text-transparent drop-shadow-[2px_1px_24px_var(--brand-foreground)] transition-all duration-300 sm:text-5xl md:text-6xl">
-                    {item.value}
-                  </div>
-                  {item.suffix && (
-                    <div className="text-brand text-2xl font-semibold">
-                      {item.suffix}
-                    </div>
-                  )}
+                <div className="text-4xl font-bold sm:text-5xl md:text-6xl text-primary">
+                  {stat.value}
                 </div>
-                {item.description && (
-                  <div className="text-muted-foreground text-sm font-semibold text-pretty">
-                    {item.description}
+                <div className="text-lg font-semibold">{stat.label}</div>
+                {stat.description && (
+                  <div className="text-muted-foreground text-sm">
+                    {stat.description}
                   </div>
                 )}
               </div>
@@ -79,3 +75,4 @@ export default function Stats({
     </Section>
   );
 }
+

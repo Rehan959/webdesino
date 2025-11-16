@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
-import LaunchUI from "../../logos/launch-ui";
+import WebDesino from "../../logos/webdesino";
 import {
   Footer,
   FooterBottom,
@@ -33,37 +33,41 @@ interface FooterProps {
 }
 
 export default function FooterSection({
-  logo = <LaunchUI />,
-  name = "Launch UI",
+  logo = <WebDesino />,
+  name = "WebDesino",
   columns = [
     {
-      title: "Product",
+      title: "Services",
       links: [
-        { text: "Changelog", href: siteConfig.url },
-        { text: "Documentation", href: siteConfig.url },
+        { text: "Web Development", href: `${siteConfig.navigation.services}#web-development` },
+        { text: "SEO Services", href: `${siteConfig.navigation.services}#seo` },
+        { text: "Digital Marketing", href: `${siteConfig.navigation.services}#digital-marketing` },
+        { text: "Graphic Design", href: `${siteConfig.navigation.services}#graphic-design` },
       ],
     },
     {
       title: "Company",
       links: [
-        { text: "About", href: siteConfig.url },
-        { text: "Careers", href: siteConfig.url },
-        { text: "Blog", href: siteConfig.url },
+        { text: "About Us", href: siteConfig.navigation.about },
+        { text: "Our Clients", href: siteConfig.navigation.clients },
+        { text: "Blog", href: siteConfig.navigation.blog },
+        { text: "Contact", href: siteConfig.navigation.contact },
       ],
     },
     {
       title: "Contact",
       links: [
-        { text: "Discord", href: siteConfig.url },
-        { text: "Twitter", href: siteConfig.url },
-        { text: "Github", href: siteConfig.links.github },
+        { text: "Email", href: siteConfig.links.email },
+        { text: "Twitter", href: siteConfig.links.twitter },
+        { text: "LinkedIn", href: siteConfig.links.linkedin },
+        { text: "Facebook", href: siteConfig.links.facebook },
       ],
     },
   ],
-  copyright = "© 2025 Mikołaj Dobrucki. All rights reserved",
+  copyright = `© ${new Date().getFullYear()} WebDesino. All rights reserved.`,
   policies = [
-    { text: "Privacy Policy", href: siteConfig.url },
-    { text: "Terms of Service", href: siteConfig.url },
+    { text: "Privacy Policy", href: `${siteConfig.url}/privacy` },
+    { text: "Terms of Service", href: `${siteConfig.url}/terms` },
   ],
   showModeToggle = true,
   className,

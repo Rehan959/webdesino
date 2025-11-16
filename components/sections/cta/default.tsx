@@ -23,12 +23,17 @@ interface CTAProps {
 }
 
 export default function CTA({
-  title = "Start building",
+  title = "Ready to Grow Your Business Online?",
   buttons = [
     {
       href: siteConfig.getStartedUrl,
-      text: "Get Started",
+      text: "Get Started Today",
       variant: "default",
+    },
+    {
+      href: siteConfig.navigation.services,
+      text: "View Our Services",
+      variant: "outline",
     },
   ],
   className,

@@ -24,121 +24,96 @@ interface FAQProps {
 }
 
 export default function FAQ({
-  title = "Questions and Answers",
+  title = "Frequently Asked Questions",
   items = [
     {
-      question:
-        "Why building a great landing page is critical for your business?",
+      question: "What services does WebDesino offer?",
       answer: (
         <>
           <p className="text-muted-foreground mb-4 max-w-[640px] text-balance">
-            In today&apos;s AI-driven world, standing out is harder than ever.
-            While anyone can build a product, a professional landing page makes
-            the difference between success and failure.
-          </p>
-          <p className="text-muted-foreground mb-4 max-w-[640px] text-balance">
-            Launch UI helps you ship faster without compromising on quality.
+            WebDesino offers comprehensive digital solutions including web development, 
+            SEO services, digital marketing, graphic design, mobile app development, 
+            and analytics & reporting. We provide end-to-end digital solutions to help 
+            businesses grow online.
           </p>
         </>
       ),
     },
     {
-      question: "Why use Launch UI instead of a no-code tool?",
+      question: "How long does it take to develop a website?",
       answer: (
         <>
           <p className="text-muted-foreground mb-4 max-w-[600px]">
-            No-code tools lock you into their ecosystem with recurring fees and
-            limited control. They often come with performance issues and make it
-            difficult to integrate with your product.
+            The timeline for website development depends on the complexity and scope of 
+            your project. A simple business website typically takes 2-4 weeks, while 
+            more complex e-commerce or custom web applications may take 6-12 weeks or more.
           </p>
           <p className="text-muted-foreground mb-4 max-w-[600px]">
-            You can&apos;t even change your hosting provider and basic things
-            like web analytics come as extra costs and paid add-ons.
-          </p>
-          <p className="text-muted-foreground mb-4 max-w-[600px]">
-            What might seem like a convenient solution today could paint you
-            into a corner tomorrow, limiting your ability to scale and adapt.
-            Launch UI gives you full control of your code while maintaining
-            professional quality.
+            We always provide a detailed timeline during the initial consultation and 
+            keep you updated throughout the development process.
           </p>
         </>
       ),
     },
     {
-      question:
-        "How Launch UI is different from other components libraries and templates?",
+      question: "Do you provide SEO services?",
       answer: (
         <>
           <p className="text-muted-foreground mb-4 max-w-[580px]">
-            Launch UI stands out with premium design quality and delightful
-            touches of custom animations and illustrations.
+            Yes, SEO is one of our core services. We offer comprehensive SEO strategies 
+            including on-page optimization, technical SEO, content marketing, link building, 
+            and local SEO for businesses in Delhi NCR.
           </p>
           <p className="text-muted-foreground mb-4 max-w-[580px]">
-            All components are carefully crafted to help position your product
-            as a professional tool, avoiding the generic template look.
-          </p>
-          <p className="text-muted-foreground mb-4 max-w-[640px] text-balance">
-            Unlike many libraries that rely on outdated CSS practices and old
-            dependencies, Launch UI is built with modern technologies and best
-            practices in mind.
+            Our SEO-first approach ensures that all websites we build are optimized for 
+            search engines from the ground up, helping you achieve better rankings and 
+            increased organic traffic.
           </p>
         </>
       ),
     },
     {
-      question: 'Why exactly does it mean that "The code is yours"?',
+      question: "What is your pricing structure?",
       answer: (
         <>
           <p className="text-muted-foreground mb-4 max-w-[580px]">
-            The basic version of Launch UI is open-source and free forever,
-            under a do-whatever-you-want license.
+            Our pricing is customized based on your specific requirements and project scope. 
+            We offer flexible packages for web development, SEO, and digital marketing services.
           </p>
           <p className="text-muted-foreground mb-4 max-w-[580px]">
-            The pro version that contains more components and options is a
-            one-time purchase that gives you lifetime access to all current and
-            future content. Use it for unlimited personal and commercial
-            projects - no recurring fees or restrictions.
-          </p>
-          <p className="text-muted-foreground mb-4 max-w-[580px]">
-            For complete details about licensing and usage rights, check out{" "}
-            <Link href="/pricing" className="text-foreground underline">
-              the pricing page
-            </Link>
-            .
+            Contact us for a free consultation and detailed quote tailored to your business needs. 
+            We provide transparent pricing with no hidden costs.
           </p>
         </>
       ),
     },
     {
-      question: "Are Figma files included?",
-      answer: (
-        <p className="text-muted-foreground mb-4 max-w-[580px]">
-          Yes! The complete Launch UI template is available for free on the{" "}
-          <Link
-            href="https://www.figma.com/community/file/1420131743903900629/launch-ui-landing-page-components-ui-kit"
-            className="text-foreground underline"
-          >
-            Figma community
-          </Link>
-          .
-        </p>
-      ),
-    },
-    {
-      question: "Can I get a discount?",
+      question: "Do you provide ongoing support and maintenance?",
       answer: (
         <>
           <p className="text-muted-foreground mb-4 max-w-[580px]">
-            Actually, yes! I&apos;m always acively looking for beta testers of
-            new features. If you are interested in exchanging feedback for a
-            discount, please contact me via{" "}
-            <a
-              href={siteConfig.links.email}
-              className="underline underline-offset-2"
-            >
-              email
-            </a>
-            .
+            Yes, we offer 24/7 support and maintenance services. Our team is available round the 
+            clock for updates, bug fixes, security patches, and any assistance you may need.
+          </p>
+          <p className="text-muted-foreground mb-4 max-w-[580px]">
+            We provide various maintenance packages to suit different business needs, ensuring 
+            your website stays updated, secure, and performing optimally.
+          </p>
+        </>
+      ),
+    },
+    {
+      question: "Can you help with existing websites?",
+      answer: (
+        <>
+          <p className="text-muted-foreground mb-4 max-w-[580px]">
+            Absolutely! We can redesign, optimize, and improve existing websites. Whether you 
+            need a complete redesign, performance optimization, SEO improvements, or just regular 
+            updates, we&apos;re here to help.
+          </p>
+          <p className="text-muted-foreground mb-4 max-w-[580px]">
+            Contact us to discuss your requirements, and we&apos;ll provide a customized solution 
+            for your existing website.
           </p>
         </>
       ),
