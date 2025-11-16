@@ -2,7 +2,6 @@ import Link from "next/link";
 
 import { siteConfig } from "@/config/site";
 import Footer from "@/components/sections/footer/default";
-import Navbar from "@/components/sections/navbar/default";
 import Stats from "@/components/sections/stats/default";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -19,21 +18,7 @@ export default function ClientsPage() {
   return (
     <main className="bg-background text-foreground min-h-screen w-full">
       <LayoutLines />
-      <Navbar />
-      <Section className="pt-24">
-        <div className="max-w-container mx-auto">
-          <div className="flex flex-col items-center gap-6 text-center mb-12">
-            <h1 className="text-4xl font-semibold sm:text-5xl md:text-6xl">
-              Our Clients
-            </h1>
-            <p className="text-muted-foreground max-w-[640px] text-lg">
-              Trusted by businesses across Delhi NCR with measurable growth in traffic, leads, and sales
-            </p>
-          </div>
-        </div>
-      </Section>
 
-      <Stats />
 
       <Section>
         <div className="max-w-container mx-auto">

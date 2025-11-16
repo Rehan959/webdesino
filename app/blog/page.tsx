@@ -8,6 +8,19 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 
+// Format date consistently to avoid hydration mismatches
+function formatDate(dateString: string): string {
+  const date = new Date(dateString);
+  const months = [
+    "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+  ];
+  const month = months[date.getMonth()];
+  const day = date.getDate();
+  const year = date.getFullYear();
+  return `${month} ${day}, ${year}`;
+}
+
 // Mock blog data - replace with your actual data fetching
 const blogPosts = [
   {
@@ -18,7 +31,7 @@ const blogPosts = [
     date: "2024-01-15",
     readTime: "5 min read",
     author: "Alex Johnson",
-    image: "/blog/nextjs.jpg",
+    image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=600&fit=crop",
     tags: ["Next.js", "React", "Web Development"],
     category: "Tutorial"
   },
@@ -30,7 +43,7 @@ const blogPosts = [
     date: "2024-01-10",
     readTime: "8 min read",
     author: "Sarah Chen",
-    image: "/blog/shadcn.jpg",
+    image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=600&fit=crop",
     tags: ["UI/UX", "shadcn/ui", "Design"],
     category: "Guide"
   },
@@ -42,7 +55,7 @@ const blogPosts = [
     date: "2024-01-05",
     readTime: "6 min read",
     author: "Mike Rodriguez",
-    image: "/blog/tailwind.jpg",
+    image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=600&fit=crop",
     tags: ["Tailwind", "CSS", "Design"],
     category: "Tutorial"
   },
@@ -54,7 +67,7 @@ const blogPosts = [
     date: "2023-12-28",
     readTime: "10 min read",
     author: "Emma Wilson",
-    image: "/blog/react.jpg",
+    image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=600&fit=crop",
     tags: ["React", "Performance", "JavaScript"],
     category: "Advanced"
   },
@@ -66,7 +79,7 @@ const blogPosts = [
     date: "2023-12-20",
     readTime: "7 min read",
     author: "David Kim",
-    image: "/blog/typescript.jpg",
+    image: "https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=800&h=600&fit=crop",
     tags: ["TypeScript", "JavaScript", "Best Practices"],
     category: "Guide"
   },
@@ -78,7 +91,7 @@ const blogPosts = [
     date: "2023-12-15",
     readTime: "9 min read",
     author: "Lisa Thompson",
-    image: "/blog/state.jpg",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
     tags: ["State", "React", "Architecture"],
     category: "Comparison"
   }
@@ -144,7 +157,7 @@ export default function BlogPage() {
                 <Card key={post.id} className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
                   <div className="relative h-48 overflow-hidden">
                     <Image
-                      src={post.image || "/placeholder-image.jpg"}
+                      src={post.image}
                       alt={post.title}
                       fill
                       className="object-cover transition-transform duration-300 hover:scale-105"
@@ -157,7 +170,7 @@ export default function BlogPage() {
                     <div className="flex items-center gap-4 text-sm text-muted-foreground mb-2">
                       <div className="flex items-center gap-1">
                         <Calendar className="h-4 w-4" />
-                        <span>{new Date(post.date).toLocaleDateString()}</span>
+                        <span>{formatDate(post.date)}</span>
                       </div>
                       <div className="flex items-center gap-1">
                         <Clock className="h-4 w-4" />
@@ -267,8 +280,8 @@ export default function BlogPage() {
                 <div className="space-y-3">
                   <div className="relative aspect-video rounded-md overflow-hidden">
                     <Image
-                      src="/blog/featured.jpg"
-                      alt="Featured post"
+                      src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=600&fit=crop"
+                      alt="Featured post" 
                       fill
                       className="object-cover"
                     />
