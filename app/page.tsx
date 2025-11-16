@@ -1,3 +1,4 @@
+import Companies from "../components/sections/companies/default";
 import CTA from "../components/sections/cta/default";
 import FAQ from "../components/sections/faq/default";
 import Footer from "../components/sections/footer/default";
@@ -13,8 +14,9 @@ export default function Home() {
       <LayoutLines />
       <Hero />
       <Stats />
-      <Services />
       <Items />
+      <Companies />
+      <Services />
       <FAQ />
       <CTA />
       <Footer />

@@ -30,14 +30,6 @@ export default function WebDesinoNavigation() {
             className={navigationMenuTriggerStyle()}
             asChild
           >
-            <Link href={siteConfig.navigation.services}>Services</Link>
-          </NavigationMenuLink>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuLink
-            className={navigationMenuTriggerStyle()}
-            asChild
-          >
             <Link href={siteConfig.navigation.about}>About</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
